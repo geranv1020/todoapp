@@ -1,4 +1,4 @@
-import React, { useRef, ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { AddTodoType, Todo } from "../model";
 import "./styles.css";
 
@@ -18,7 +18,6 @@ export default function InputBar({ handleAddTodo }: Props) {
 		e.preventDefault();
 		/** we want to validate the data */
 		const validDate = !isNaN(new Date(todo.deadline).getTime());
-		console.log("validDate", validDate);
 		if (!validDate) {
 			alert("please provide a valid date");
 			return;
